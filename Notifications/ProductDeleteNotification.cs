@@ -2,9 +2,9 @@
 using MediatR;
 namespace ProjetoAPIEcommerce.Notifications
 {
-  public class ProdutoDeleteNotification : INotification
+  public class ProductDeleteNotification : INotification
   {
     public int Id { get; set; }
-    public bool IsConcluido { get; set; }
+    public bool IsConcluded { get; set; }
   }
 }

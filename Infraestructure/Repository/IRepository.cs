@@ -1,7 +1,7 @@
-
 using System.Collections.Generic;
 using System.Threading.Tasks;
-namespace ProjetoAPIEcommerce.Repository
+
+namespace ProjetoAPIEcommerce.Infraestructure.Repository
 {
   public interface IRepository<T>
   {
