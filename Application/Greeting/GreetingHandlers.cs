@@ -2,7 +2,7 @@ using System;
 
 namespace ProjetoAPIEcommerce.Application.Greeting
 {
-  public class GreetingHandlers
+  public class GreetingCommand : IRequesthandler<GreetingRequest, GreetingResponse>
   {
     // essa entidade Greeting não é necessária
   }
