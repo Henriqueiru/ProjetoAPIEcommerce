@@ -8,14 +8,12 @@ using System.Threading.Tasks;
 
 namespace ProjetoAPIEcommerce.Application.Handler
 {
-  public class ProductUpdateCommandHandler : IRequestHandler<ProductResponse>
+  public class ProductUpdateCommandHandler : IRequestHandler<Product>
   {
-    private readonly IMediator _mediator;
     private readonly IRepository<Product> _repository;
 
-    public ProductUpdateCommandHandler(IMediator mediator, IRepository<Product> repository)
+    public ProductUpdateCommandHandler(IRepository<Product> repository)
     {
-      this._mediator = mediator;
       this._repository = repository;
     }
     public async Task<string> Handle(ProductCommand request, CancellationToken cancellationToken)
@@ -25,13 +23,12 @@ namespace ProjetoAPIEcommerce.Application.Handler
       try
       {
         await _repository.Edit(product);
-        await _mediator.Publish(new ProductUpdateNotification { Id = product.Id, Name = product.Name, Price = product.Price, Description = product.Description, Category = product.Category });
+
         return await Task.FromResult("Product changed sucessfull");
       }
       catch (Exception ex)
       {
-        await _mediator.Publish(new ProductUpdateNotification { Id = product.Id, Name = product.Name, Price = product.Price, Description = product.Description, Category = product.Category });
-        await _mediator.Publish(new ErrorNotification { Error = ex.Message, BatteryError = ex.StackTrace });
+
         return await Task.FromResult("Error ocurred in Update");
       }
     }

@@ -17,8 +17,7 @@ namespace ProjetoAPIEcommerce.Application
           Id = 1,
           Name = "Wine",
           Description = "The best wine of my life",
-          Price = 10,
-          Category = 2
+          Price = 10
         };
 
         return await Task.FromResult(result);

@@ -10,12 +10,10 @@ namespace ProjetoAPIEcommerce.Application.Handler
 {
   public class ProductCreateCommandHandler
   {
-    private readonly IMediator _mediator;
     private readonly IRepository<Product> _repository;
 
-    public ProductCreateCommandHandler(IMediator mediator, IRepository<Product> repository)
+    public ProductCreateCommandHandler(IRepository<Product> repository)
     {
-      this._mediator = mediator;
       this._repository = repository;
     }
     public async Task<string> Handle(ProductCommand request, CancellationToken cancellationToken)
@@ -25,13 +23,11 @@ namespace ProjetoAPIEcommerce.Application.Handler
       try
       {
         await _repository.Add(product);
-        await _mediator.Publish(new ProductCreateNotification { Id = product.Id, Name = product.Name, Price = product.Price, Description = product.Description, Category_id = product.Category_id });
         return await Task.FromResult("Produto criado com sucesso");
       }
       catch (Exception ex)
       {
-        await _mediator.Publish(new ProductCreateNotification { Id = product.Id, Name = product.Name, Price = product.Price, Description = product.Description, Category_id = product.Category_id });
-        await _mediator.Publish(new ErrorNotification { Error = ex.Message, BatteryError = ex.StackTrace });
+
         return await Task.FromResult("Ocorreu um erro no momento da criação");
       }
     }
