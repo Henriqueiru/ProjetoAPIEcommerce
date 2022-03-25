@@ -1,14 +1,11 @@
 using System;
 using MediatR;
 
-namespace ProjetoAPIEcommerce.Domain
+namespace ProjetoAPIEcommerce.Application
 {
-  public class Product : IRequest<string>
+  public class ProductCreateCommand : IRequest<string>
   {
-    public int Id { get; set; }
-
-    public string Name { get; set; }
-
+    public string Name { get; private set; }
     public string Description { get; set; }
 
     public decimal Price { get; set; }
