@@ -3,7 +3,7 @@ using MediatR;
 
 namespace ProjetoAPIEcommerce.Application
 {
-  public class ProductUpdateCommand
+  public class ProductUpdateCommand : IRequest<string>
   {
     public int Id { get; private set; }
     public string Name { get; private set; }

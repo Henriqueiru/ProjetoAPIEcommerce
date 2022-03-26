@@ -1,5 +1,6 @@
 
 using MediatR;
+
 namespace ProjetoAPIEcommerce.Notifications
 {
   public class ErrorNotification : INotification
