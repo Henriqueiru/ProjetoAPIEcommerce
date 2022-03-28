@@ -1,6 +1,7 @@
 using System.Reflection;
 using System.Collections.Immutable;
 using ProjetoAPIEcommerce.Application;
+using ProjetoAPIEcommerce.Infraestructure.Repository;
 using MediatR;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,10 +9,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddSingleton<ProductRepository>();
 
 var app = builder.Build();
 
