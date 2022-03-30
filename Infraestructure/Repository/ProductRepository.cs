@@ -11,9 +11,9 @@ namespace ProjetoAPIEcommerce.Infraestructure.Repository
 
     public Dictionary<int, Product> GetProdutos()
     {
-      products.Add(1, new Product { Id = 1, Name = "Caneta", Price = 3.45m });
-      products.Add(2, new Product { Id = 2, Name = "Caderno", Price = 7.65m });
-      products.Add(3, new Product { Id = 3, Name = "Borracha", Price = 1.20m });
+      products.Add(1, new Product { Id = 1, Name = "Caneta", Price = 3.45m, Description = "This is a material", Category = "Material" });
+      products.Add(2, new Product { Id = 2, Name = "Caderno", Price = 7.65m, Description = "This is a material", Category = "Material" });
+      products.Add(3, new Product { Id = 3, Name = "Borracha", Price = 1.20m, Description = "This is a material", Category = "Material" });
       return products;
     }
     public ProductRepository()
