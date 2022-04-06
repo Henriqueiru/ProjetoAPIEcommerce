@@ -8,14 +8,14 @@ using MediatR;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
-
+builder.Services.AddOptions();
 builder.Services.AddControllers();
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<IRepository<Product>, ProductRepository>();
+builder.Services.AddSingleton<IRepository<Product>, ProductRepository>();
 
 var app = builder.Build();
 

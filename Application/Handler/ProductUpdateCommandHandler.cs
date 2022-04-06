@@ -25,15 +25,15 @@ namespace ProjetoAPIEcommerce.Application.Handler
       {
         Id = request.Id,
         Name = request.Name,
-        Price = request.Price,
         Description = request.Description,
+        Price = request.Price,
         Category = request.Category
       };
       try
       {
         await _repository.Edit(product);
         await _mediator.Publish(new ProductUpdateNotification
-        { Id = product.Id, Name = product.Name, Price = product.Price, Description = product.Description, Category = product.Category });
+        { Id = product.Id, Name = product.Name, Description = product.Description, Price = product.Price, Category = product.Category });
         return await Task.FromResult("Produto alterado com sucesso");
       }
       catch (Exception ex)
@@ -42,8 +42,8 @@ namespace ProjetoAPIEcommerce.Application.Handler
         {
           Id = product.Id,
           Name = product.Name,
-          Price = request.Price,
           Description = request.Description,
+          Price = request.Price,
           Category = request.Category
         });
 

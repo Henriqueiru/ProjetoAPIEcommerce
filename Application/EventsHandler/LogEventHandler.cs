@@ -16,7 +16,7 @@ namespace ProjetoAPIEcommerce.Application.EventsHandler
       return Task.Run(() =>
       {
         Console.WriteLine($"CREATED: '{notification.Id} " +
-                  $"- {notification.Name} - {notification.Price}'");
+                  $"- {notification.Name} - {notification.Description}  - {notification.Price} - {notification.Category}'");
       });
     }
     public Task Handle(ProductUpdateNotification notification, CancellationToken cancellationToken)
@@ -24,7 +24,7 @@ namespace ProjetoAPIEcommerce.Application.EventsHandler
       return Task.Run(() =>
       {
         Console.WriteLine($"UPDATED: '{notification.Id} - {notification.Name} " +
-                  $"- {notification.Price} - {notification.IsConcluded}'");
+                  $"- {notification.Description}  - {notification.Price} - {notification.Category} - {notification.IsConcluded}'");
       });
     }
     public Task Handle(ProductDeleteNotification notification, CancellationToken cancellationToken)
