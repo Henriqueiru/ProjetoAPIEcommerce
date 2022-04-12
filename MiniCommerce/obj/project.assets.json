@@ -1610,19 +1610,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Usuário\\.nuget\\packages\\": {}
+    "/home/encinecarlos/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuário\\Desktop\\MiniCommerce\\MiniCommerce\\MiniCommerce.csproj",
+      "projectUniqueName": "/home/encinecarlos/labs/ProjetoAPIEcommerce/MiniCommerce/MiniCommerce.csproj",
       "projectName": "MiniCommerce",
-      "projectPath": "C:\\Users\\Usuário\\Desktop\\MiniCommerce\\MiniCommerce\\MiniCommerce.csproj",
-      "packagesPath": "C:\\Users\\Usuário\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuário\\Desktop\\MiniCommerce\\MiniCommerce\\obj\\",
+      "projectPath": "/home/encinecarlos/labs/ProjetoAPIEcommerce/MiniCommerce/MiniCommerce.csproj",
+      "packagesPath": "/home/encinecarlos/.nuget/packages/",
+      "outputPath": "/home/encinecarlos/labs/ProjetoAPIEcommerce/MiniCommerce/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Usuário\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/encinecarlos/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -1687,24 +1687,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.0, 6.0.0]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.1, 6.0.1]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.0, 6.0.0]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.0, 6.0.0]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -1713,7 +1695,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100-preview.1.22110.4\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
       }
     }
   }
