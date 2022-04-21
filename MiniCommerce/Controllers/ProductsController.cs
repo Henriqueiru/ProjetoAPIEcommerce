@@ -43,5 +43,7 @@ namespace MiniCommerce.Controllers
       return Ok(product);
     }
 
+
+
   }
 }

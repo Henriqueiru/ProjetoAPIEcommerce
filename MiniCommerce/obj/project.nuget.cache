@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rngkU8Dsn2OqP9Pprpsl1/9oFXhLhct7EnoeuvabZ3NunSTnmylsAni1V9ht549OUiqpMvq0N5NycTn6l7coEw==",
+  "dgSpecHash": "FO545rZuyozBZCsbgAgThPPXfnLB1urFtKnsKzaxS8lv74XCY8hhaDOPX8FrToC4n+NcZJfHteo9r4wMS9jeYg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Usuário\\Desktop\\MiniCommerce\\MiniCommerce\\MiniCommerce.csproj",
+  "projectFilePath": "C:\\Users\\Usuário\\Desktop\\ProjetoEcommerce\\ProjetoAPIEcommerce\\MiniCommerce\\MiniCommerce.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuário\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\Usuário\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

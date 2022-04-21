@@ -1615,11 +1615,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuário\\Desktop\\MiniCommerce\\MiniCommerce\\MiniCommerce.csproj",
+      "projectUniqueName": "C:\\Users\\Usuário\\Desktop\\ProjetoEcommerce\\ProjetoAPIEcommerce\\MiniCommerce\\MiniCommerce.csproj",
       "projectName": "MiniCommerce",
-      "projectPath": "C:\\Users\\Usuário\\Desktop\\MiniCommerce\\MiniCommerce\\MiniCommerce.csproj",
+      "projectPath": "C:\\Users\\Usuário\\Desktop\\ProjetoEcommerce\\ProjetoAPIEcommerce\\MiniCommerce\\MiniCommerce.csproj",
       "packagesPath": "C:\\Users\\Usuário\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuário\\Desktop\\MiniCommerce\\MiniCommerce\\obj\\",
+      "outputPath": "C:\\Users\\Usuário\\Desktop\\ProjetoEcommerce\\ProjetoAPIEcommerce\\MiniCommerce\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Usuário\\AppData\\Roaming\\NuGet\\NuGet.Config"
