@@ -5,10 +5,13 @@ using MiniCommerce.Models;
 using MiniCommerce.Service.Commands;
 using Microsoft.EntityFrameworkCore;
 using MiniCommerce.Data.Database;
+using MiniCommerce.Service.Handlers.response;
+using System.Net;
+using MiniCommerce.Service.Common;
 
 namespace MiniCommerce.Service.Handlers
 {
-  public class CreateProductHandler : IRequestHandler<CreateProductCommand, DetailProductDto>
+  public class CreateProductHandler : IRequestHandler<CreateProductCommand, ProductResponse>
   {
     private readonly AppDbContext _context;
     private readonly IMapper _mapper;
@@ -21,20 +24,35 @@ namespace MiniCommerce.Service.Handlers
       _logger = logger;
     }
 
-    public async Task<DetailProductDto> Handle(CreateProductCommand request, CancellationToken cancellationToken)
+    public async Task<ProductResponse> Handle(CreateProductCommand request, CancellationToken cancellationToken)
     {
+      var response = new ProductResponse();
+
       try
       {
         var product = _mapper.Map<Product>(request.CreateProductDto);
         await _context.Products.AddAsync(product);
         await _context.SaveChangesAsync();
-        return _mapper.Map<DetailProductDto>(product);
+        
+        return await ReturnSuccess(response, "Success");
       }
       catch (Exception ex)
       {
         _logger.LogError(ex.ToString());
-        return null;
+
+        response.Message = $"{ex.Message}";
+        response.StatusCode = (int) HttpStatusCode.BadRequest;
+
+        return await Task.FromResult(response);
       }
+    }
+
+    private async Task<ProductResponse> ReturnSuccess(ProductResponse response, string message)
+    {
+      response.Message = $"{message}";
+      response.StatusCode = (int) HttpStatusCode.Created;
+
+      return await Task.FromResult(response);
     }
   }
 }
