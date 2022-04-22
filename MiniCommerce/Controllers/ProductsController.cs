@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MiniCommerce.Models;
 using MiniCommerce.Service.Commands;
-using MiniCommerce.Service.Handlers.response;
+using MiniCommerce.Service.Handlers.Response;
 using MiniCommerce.Service.Queries;
 
 namespace MiniCommerce.Controllers
@@ -31,7 +31,18 @@ namespace MiniCommerce.Controllers
 
       var result = await _mediator.Send(new CreateProductCommand(productDto));
       if (result == null) { return BadRequest(); }
-      return CreatedAtAction("GetProductById", new { id = result.ProductId }, result);
+      return CreatedAtAction("GetProductById", new { id = result.Id }, result);
+
+    }
+
+    [HttpPut("{id}")]
+    [ProducesResponseType(typeof(ProductResponse), StatusCodes.Status201Created)]
+    public async Task<ActionResult<ProductResponse>> UpdateProduct(int id, UpdateProductDto productDto)
+    {
+
+      var result = await _mediator.Send(new UpdateProductByIdCommand(id, productDto));
+      if (result == null) { return BadRequest(); }
+      return Ok(result);
 
     }
 
@@ -50,14 +61,14 @@ namespace MiniCommerce.Controllers
       return Ok(product);
     }
     [HttpDelete("{id}")]
-    [ProducesResponseType(typeof(ProductResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ProductResponse), StatusCodes.Status204NoContent)]
     [ProducesResponseType(typeof(ProductResponse), StatusCodes.Status404NotFound)]
     public async Task<ActionResult> DeleteProduct(int id)
     {
       var command = new DeleteProductByIdCommand(id);
       var result = await _mediator.Send(command);
       if (!result) { return NotFound(); }
-      return Ok();
+      return NoContent();
     }
 
 

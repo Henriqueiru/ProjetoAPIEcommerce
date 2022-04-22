@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using MiniCommerce.Domain.Entities;
 using MiniCommerce.Models;
+using MiniCommerce.Service.Commands;
+using MiniCommerce.Service.Handlers.Response;
 
 namespace MiniCommerce.Mapper
 {
@@ -8,8 +10,11 @@ namespace MiniCommerce.Mapper
   {
     public ProductProfile()
     {
-      CreateMap<Product, DetailProductDto>();
-      CreateMap<CreateProductDto, Product>();
+      CreateMap<Product, DetailProductDto>().ReverseMap();
+      CreateMap<CreateProductDto, Product>().ReverseMap();
+      CreateMap<UpdateProductDto, Product>().ReverseMap();
+      CreateMap<Product, ProductResponse>().ReverseMap();
+      CreateMap<Product, UpdateProductByIdCommand>().ReverseMap();
     }
   }
 }

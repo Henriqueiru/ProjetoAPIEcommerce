@@ -4,6 +4,6 @@ using MiniCommerce.Service.Handlers.Response;
 
 namespace MiniCommerce.Service.Commands
 {
-  public record CreateProductCommand(CreateProductDto CreateProductDto) : IRequest<ProductResponse>;
+  public record UpdateProductByIdCommand(int Id, UpdateProductDto UpdateProductDto) : IRequest<ProductResponse>;
 
 }
