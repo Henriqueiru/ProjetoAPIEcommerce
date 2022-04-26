@@ -9,10 +9,15 @@ namespace MiniCommerce.Data.Database
     {
       Products = this.Set<Product>();
       Categories = this.Set<Category>();
+      Custumers = this.Set<Custumer>();
+      Addresses = this.Set<Address>();
     }
 
     public DbSet<Product> Products { get; private set; }
     public DbSet<Category> Categories { get; private set; }
+
+    public DbSet<Custumer> Custumers { get; private set; }
+    public DbSet<Address> Addresses { get; private set; }
 
     public override int SaveChanges()
     {
