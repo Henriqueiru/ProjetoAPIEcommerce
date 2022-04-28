@@ -37,20 +37,13 @@ namespace MiniCommerce.Data.Database
       foreach (var entity in ChangeTracker.Entries().Where(p => p.State == EntityState.Added))
       {
         var created = entity.Entity as BaseEntity;
-        if (created != null)
-        {
-          created.CreatedOn = DateTime.Now;
-          created.UpdatedOn = DateTime.Now;
-        }
+
       }
 
       foreach (var entity in ChangeTracker.Entries().Where(p => p.State == EntityState.Modified))
       {
         var updated = entity.Entity as BaseEntity;
-        if (updated != null)
-        {
-          updated.UpdatedOn = DateTime.Now;
-        }
+
       }
     }
   }
